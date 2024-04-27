@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 1984-2023  Mark Nudelman
+ * Copyright (C) 1984-2024  Mark Nudelman
  *
  * You may distribute under the terms of either the GNU General Public
  * License or the Less License, as specified in the README file.
@@ -993,6 +993,25 @@ v640  7/10/23   Add lesstest to release.
 v641  7/10/23   Fix release.
 v642  7/10/23   Fix release.
 v643  7/20/23   Fix crash on Windows with -o.
+v644  9/16/23   Improve ^C on non-terminated pipe; fix crash when files are
+                deleted; support large files and non-BMP chars on Windows; 
+                fix # bug; don't filter header lines; fix shifting long lines;
+                add --match-shift.
+v645  11/5/23   Default Windows charset is utf-8; update Unicode tables;
+                fix ESC-} bug; mouse right-click jumps to '#'; 
+                add LESSSECURE_ALLOW; add --lesskey-content & LESSKEY_CONTENT;
+                allow env var expansion in lesskey files; add LESS_UNSUPPORT.
+v646  11/6/23   Bug fixes.
+v647  11/16/23  Fix --+option; fix compiler warnings.
+v648  11/16/23  Add lang.h to release.
+v649  12/1/23   Add line number param to --header.
+v650  2/6/24    Add --no-search-header-lines and --no-search-header-columns;
+                add ^L search modifier; add ^P shell command modifier;
+                add search wrap message; add ^O^N, ^O^P, ^O^L and ^O^O commands.
+v651  3/4/24    Add --color attributes (*~_&); fix #/% substitution if name 
+                contains spaces; allow --rscroll with non-ASCII char.
+v652  3/11/24   Fix sleep_ms with usleep.
+v653  3/20/24   Make default charset utf-8.
 */
 
-char version[] = "643";
+char version[] = "653";

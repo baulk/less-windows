@@ -5167,7 +5167,6 @@ LIBS="$LIBS $TERMLIBS"
 
 
 
-
 # Checks for identifiers.
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for void" >&5
 printf %s "checking for void... " >&6; }
@@ -5256,32 +5255,6 @@ if ac_fn_c_try_compile "$LINENO"
 then :
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 printf "%s\n" "yes" >&6; }; printf "%s\n" "#define HAVE_STAT_INO 1" >>confdefs.h
-
-else $as_nop
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
-printf "%s\n" "no" >&6; }
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for procfs" >&5
-printf %s "checking for procfs... " >&6; }
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <sys/statfs.h>
-#if HAVE_LINUX_MAGIC_H
-#include <linux/magic.h>
-#endif
-int
-main (void)
-{
-struct statfs s; s.f_type = PROC_SUPER_MAGIC; (void) fstatfs(0,&s);
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }; printf "%s\n" "#define HAVE_PROCFS 1" >>confdefs.h
 
 else $as_nop
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5

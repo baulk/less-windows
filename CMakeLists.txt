@@ -81,7 +81,7 @@ else()
   set(LESS_VERSION_BUILD 1)
 endif()
 
-set(LESS_VERSION_MAJOR 643)
+set(LESS_VERSION_MAJOR 653)
 set(LESS_VERSION_MINOR 0)
 set(LESS_VERSION_PATCH 0)
 set(PACKAGE_VERSION "${LESS_VERSION_MAJOR}")
@@ -111,6 +111,7 @@ add_executable(less
   "less/cvt.c"
   "less/decode.c"
   "less/edit.c"
+  "less/evar.c"
   "less/filename.c"
   "less/forwback.c"
 	"less/help.c"
@@ -145,3 +146,7 @@ add_executable(lesskey
   "less/version.c"
   "less/xbuf.c"
 )
+
+install(TARGETS less DESTINATION .)
+install(TARGETS lesskey DESTINATION .)
+install(FILES LICENSE DESTINATION .)
