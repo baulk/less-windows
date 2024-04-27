@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(less_windows)
+project(less)
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR AND NOT MSVC_IDE)
   message(
@@ -34,13 +34,13 @@ if(MSVC)
   add_compile_options("-utf-8")
   add_compile_options("-permissive-")
   add_compile_options("-Zc:__cplusplus")
-  add_compile_options("-DUNICODE=1")
-  add_compile_options("-D_UNICODE=1")
+  # add_compile_options("-DUNICODE=1")
+  # add_compile_options("-D_UNICODE=1")
   add_compile_options("-W3")
   set(CMAKE_RC_FLAGS "${CMAKE_RC_FLAGS} -c65001")
 else()
-  add_compile_options("-DUNICODE=1")
-  add_compile_options("-D_UNICODE=1")
+  # add_compile_options("-DUNICODE=1")
+  # add_compile_options("-D_UNICODE=1")
   add_compile_options("-g")
   add_compile_options("-Wall")
   add_compile_options("-Wextra")
@@ -81,13 +81,13 @@ else()
   set(LESS_VERSION_BUILD 1)
 endif()
 
-set(LESS_VERSION_MAJOR 7)
+set(LESS_VERSION_MAJOR 643)
 set(LESS_VERSION_MINOR 0)
-set(LESS_VERSION_PATCH 8)
-set(PACKAGE_VERSION "${LESS_VERSION_MAJOR}.${LESS_VERSION_MINOR}.${LESS_VERSION_PATCH}")
+set(LESS_VERSION_PATCH 0)
+set(PACKAGE_VERSION "${LESS_VERSION_MAJOR}")
 
 string(TOLOWER "${CMAKE_C_COMPILER_ARCHITECTURE_ID}" LESS_ARCH_NAME)
-set(CPACK_SYSTEM_NAME "win-${LESS_ARCH_NAME}")
+set(CPACK_SYSTEM_NAME "${LESS_ARCH_NAME}")
 set(CPACK_PACKAGE_NAME "less")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "less")
 set(CPACK_PACKAGE_VERSION_MAJOR ${LESS_VERSION_MAJOR})
@@ -95,7 +95,53 @@ set(CPACK_PACKAGE_VERSION_MINOR ${LESS_VERSION_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${LESS_VERSION_PATCH})
 set(CPACK_PACKAGE_VERSION ${PACKAGE_VERSION})
 set(CPACK_PACKAGE_VENDOR "less")
-set(CPACK_PACKAGE_CONTACT "Alexander Roshal")
+set(CPACK_PACKAGE_CONTACT "Mark Nudelman")
 include(CPack)
 
-add_subdirectory(less)
+include_directories("./less")
+
+add_executable(less
+  "less/main.c"
+  "less/screen.c"
+  "less/brac.c"
+  "less/ch.c"
+  "less/charset.c"
+  "less/cmdbuf.c"
+	"less/command.c"
+  "less/cvt.c"
+  "less/decode.c"
+  "less/edit.c"
+  "less/filename.c"
+  "less/forwback.c"
+	"less/help.c"
+  "less/ifile.c"
+  "less/input.c"
+  "less/jump.c" 
+  "less/lesskey_parse.c"
+  "less/line.c"
+  "less/linenum.c"
+	"less/lsystem.c"
+  "less/mark.c"
+  "less/optfunc.c"
+  "less/option.c"
+  "less/opttbl.c"
+  "less/os.c"
+	"less/output.c"
+  "less/pattern.c"
+  "less/position.c"
+  "less/prompt.c"
+  "less/search.c"
+  "less/signal.c"
+	"less/tags.c"
+  "less/ttyin.c"
+  "less/version.c"
+  "less/xbuf.c"
+  "less/regexp.c"
+)
+
+add_executable(lesskey
+  "less/lesskey.c"
+  "less/lesskey_parse.c"
+  "less/version.c"
+  "less/xbuf.c"
+)
