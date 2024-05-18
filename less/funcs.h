@@ -64,7 +64,7 @@ public void ch_close(void);
 public int ch_getflags(void);
 public void setfmt(constant char *s, constant char **fmtvarptr, int *attrptr, constant char *default_fmt, lbool for_printf);
 public void init_charset(void);
-public int binary_char(LWCHAR c);
+public lbool binary_char(LWCHAR c);
 public lbool control_char(LWCHAR c);
 public constant char * prchar(LWCHAR c);
 public constant char * prutfchar(LWCHAR ch);

@@ -48,4 +48,4 @@
 
        Report bugs at https://github.com/gwsw/less/issues.
 
-                           Version 653: 20 Mar 2024                [4mLESSECHO[24m(1)
+                           Version 654: 28 Apr 2024                [4mLESSECHO[24m(1)

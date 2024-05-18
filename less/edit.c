@@ -441,7 +441,7 @@ public int edit_ifile(IFILE ifile)
 	IFILE was_curr_ifile;
 	char *p;
 	PARG parg;
-	ssize_t nread = 0;
+	ssize_t nread;
 
 	if (ifile == curr_ifile)
 	{

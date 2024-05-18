@@ -358,8 +358,8 @@
        sion 594.  In those older versions, all #version lines are ignored.
 
 [1mEXAMPLE[0m
-       The following input file sets the -i and -S options when is run and, on
-       version 595 and higher, adds a --color option.
+       The  following  input  file sets the -i and -S options when [1mless [22mis run
+       and, on version 595 and higher, adds a --color option.
 
             #env
             ## (Note that there must be a space at the end of the next line,
@@ -371,30 +371,30 @@
        [1mless[22m(1)
 
 [1mWARNINGS[0m
-       On  MS‐DOS and OS/2 systems, certain keys send a sequence of characters
-       which start with a NUL character (0).  This  NUL  character  should  be
+       On MS‐DOS and OS/2 systems, certain keys send a sequence of  characters
+       which  start  with  a  NUL character (0).  This NUL character should be
        represented as \340 in a lesskey file.
 
 [1mCOPYRIGHT[0m
        Copyright (C) 1984‐2024  Mark Nudelman
 
-       less  is  part of the GNU project and is free software.  You can redis‐
-       tribute it and/or modify it under the terms of either (1) the GNU  Gen‐
-       eral  Public  License  as published by the Free Software Foundation; or
+       less is part of the GNU project and is free software.  You  can  redis‐
+       tribute  it and/or modify it under the terms of either (1) the GNU Gen‐
+       eral Public License as published by the Free  Software  Foundation;  or
        (2) the Less License.  See the file README in the less distribution for
        more details regarding redistribution.  You should have received a copy
-       of the GNU General Public License along with the source for  less;  see
-       the  file  COPYING.   If not, write to the Free Software Foundation, 59
-       Temple Place, Suite 330, Boston, MA  02111‐1307, USA.  You should  also
+       of  the  GNU General Public License along with the source for less; see
+       the file COPYING.  If not, write to the Free  Software  Foundation,  59
+       Temple  Place, Suite 330, Boston, MA  02111‐1307, USA.  You should also
        have received a copy of the Less License; see the file LICENSE.
 
        less is distributed in the hope that it will be useful, but WITHOUT ANY
-       WARRANTY;  without even the implied warranty of MERCHANTABILITY or FIT‐
-       NESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  for
+       WARRANTY; without even the implied warranty of MERCHANTABILITY or  FIT‐
+       NESS  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
        more details.
 
 [1mAUTHOR[0m
        Mark Nudelman
        Report bugs at https://github.com/gwsw/less/issues.
 
-                           Version 653: 20 Mar 2024                 [4mLESSKEY[24m(1)
+                           Version 654: 28 Apr 2024                 [4mLESSKEY[24m(1)

@@ -30,6 +30,7 @@ extern int sc_width;
 extern int so_s_width, so_e_width;
 extern int is_tty;
 extern int oldbot;
+extern int utf_mode;
 extern char intr_char;
 
 #if MSDOS_COMPILER==WIN32C || MSDOS_COMPILER==BORLANDC || MSDOS_COMPILER==DJGPPC
@@ -237,7 +238,11 @@ static void set_win_colors(t_sgr *sgr)
 
 static void win_flush(void)
 {
-	if (ctldisp != OPT_ONPLUS || (vt_enabled && sgr_mode))
+	if (ctldisp != OPT_ONPLUS
+#if MSDOS_COMPILER==WIN32C
+	    || (vt_enabled && sgr_mode)
+#endif
+	   )
 		WIN32textout(obuf, ptr_diff(ob, obuf));
 	else
 	{
@@ -546,6 +551,7 @@ IPRINT_FUNC(iprint_linenum, LINENUM, linenumtoa)
 public int less_printf(constant char *fmt, PARG *parg)
 {
 	constant char *s;
+	constant char *es;
 	int col;
 
 	col = 0;
@@ -562,11 +568,17 @@ public int less_printf(constant char *fmt, PARG *parg)
 			{
 			case 's':
 				s = parg->p_string;
+				es = s + strlen(s);
 				parg++;
 				while (*s != '\0')
 				{
-					putchr(*s++);
-					col++;
+					LWCHAR ch = step_charc(&s, +1, es);
+					constant char *ps = utf_mode ? prutfchar(ch) : prchar(ch);
+					while (*ps != '\0')
+					{
+						putchr(*ps++);
+						col++;
+					}
 				}
 				break;
 			case 'd':
