@@ -85,6 +85,8 @@ public void cmd_putstr(constant char *s);
 public int len_cmdbuf(void);
 public void cmd_repaint(constant char *old_cp);
 public void set_mlist(void *mlist, int cmdflags);
+public ssize_t save_updown_match(void);
+public void restore_updown_match(ssize_t udm);
 public void cmd_addhist(struct mlist *mlist, constant char *cmd, lbool modified);
 public void cmd_accept(void);
 public int cmd_char(char c);
