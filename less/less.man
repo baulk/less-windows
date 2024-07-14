@@ -2341,4 +2341,4 @@
        For more information, see the less homepage at
        https://greenwoodsoftware.com/less.
 
-                           Version 658: 13 Jun 2024                    [4mLESS[24m(1)
+                           Version 661: 29 Jun 2024                    [4mLESS[24m(1)
