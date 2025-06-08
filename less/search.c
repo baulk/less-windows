@@ -354,9 +354,7 @@ public void clear_attn(void)
 public void undo_search(lbool clear)
 {
 	clear_pattern(&search_info);
-#if OSC8_LINK
-	osc8_linepos = NULL_POSITION;
-#endif
+	undo_osc8();
 #if HILITE_SEARCH
 	if (clear)
 	{
@@ -371,6 +369,15 @@ public void undo_search(lbool clear)
 		hide_hilite = !hide_hilite;
 	}
 	repaint_hilite(TRUE);
+#endif
+}
+
+/*
+ */
+public void undo_osc8(void)
+{
+#if OSC8_LINK
+	osc8_linepos = NULL_POSITION;
 #endif
 }
 
@@ -632,7 +639,7 @@ public int is_hilited_attr(POSITION pos, POSITION epos, int nohide, int *p_match
 
 #if OSC8_LINK
 	if (osc8_linepos != NULL_POSITION && 
-			pos <= osc8_text_end && (epos == NULL_POSITION || epos > osc8_text_start))
+			pos < osc8_text_end && (epos == NULL_POSITION || epos > osc8_text_start))
 		return (AT_HILITE|AT_COLOR_SEARCH);
 #endif
 

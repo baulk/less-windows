@@ -137,6 +137,7 @@
             z          forw‐window
             w          back‐window
             \e\40      forw‐screen‐force
+            \eb        back‐screen‐force
             F          forw‐forever
             \eF        forw‐until‐hilite
             R          repaint‐flush
@@ -404,4 +405,4 @@
        Mark Nudelman
        Report bugs at ⟨https://github.com/gwsw/less/issues⟩.
 
-                           Version 674: 24 Mar 2025                 [4mLESSKEY[24m(1)
+                           Version 679: 28 May 2025                 [4mLESSKEY[24m(1)

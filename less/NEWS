@@ -11,7 +11,17 @@
 
 ======================================================================
 
-	Major changes between "less" versions 668 and 674
+	Major changes between "less" versions 678 and 679
+
+* Fix bad parsing of lesskey file an env var is a prefix of another
+  env var (github #626).
+
+* Fix unexpected exit using -K if a key press is received while reading
+  the input file (github #628).
+
+======================================================================
+
+	Major changes between "less" versions 668 and 678
 
 * Treat -r in LESS environment variable as -R.
 
@@ -22,6 +32,8 @@
 * Add --no-edit-warn option (github #513).
 
 * Add --form-feed option (github #496).
+
+* Add ESC-b command (github #615).
 
 * Make TAB complete option name in -- command (github #531).
 
@@ -48,6 +60,8 @@
 
 * Improve behavior of ^O^N and ^O^P commands.
 
+* Leave stty tabs setting unchanged (github #620).
+
 * Fix unexpected behavior when entering a partial command followed by 
   a valid command (github #543).
 
@@ -73,6 +87,10 @@
 * Fix two bugs using ^S search modifier (github #605).
 
 * Fix bug searching for UTF-8 strings with the PCRE2 library (github #610).
+
+* Fix bug highlighting OSC 8 links when opening a new file.
+
+* Fix bug when & filtering is active (github #618).
 
 ======================================================================
 

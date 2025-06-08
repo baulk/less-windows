@@ -1043,6 +1043,12 @@ v671  12/6/24   Fix multibyte command chars; fix Windows auto_wrap.
 v672  1/20/25   Don't poll with -F on short file; remove --no-poll.
 v673  3/13/25   Treat -r in LESS var as -R; add ESC-j and ESC-k.
 v674  3/24/25   Improve behavior of ^O^N and ^O^P commands.
+v675  4/3/25    Add ESC-b.
+v676  4/16/25   Fix two OSC 8 display bugs.
+v677  4/27/25   Fix & filtering bug.
+v678  5/1/25    Don't change stty tab setting.
+v679  5/28/25   Fix lesskey parsing bug when env var is prefix of another;
+                fix unexpected exit when using -K.
 */
 
-char version[] = "674";
+char version[] = "679";
